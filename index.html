@@ -54,7 +54,6 @@ var deadline = new Date(jan);
 var timeDiff = Math.abs(deadline.getTime() - cur.getTime());
 var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
 var deadline_txt = deadline.toLocaleDateString("nl-NL");
-var cur_txt = cur.toLocaleDateString("nl-NL");
-var t = "Graag mutaties inleveren voor: " + deadline_txt + "." + "Nog " + diffDays + " dagen." + cur_txt;
+var t = "Graag mutaties inleveren voor: " + deadline_txt + "." + "Nog " + diffDays + " dagen.";
 document.getElementById("demo").innerHTML = t;
 </script>
