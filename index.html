@@ -1,4 +1,19 @@
-<p id="demo"></p>
+
+<style>
+p.normal {
+    font-style: normal;
+}
+
+p.italic {
+    font-style: italic;
+}
+
+p.oblique {
+    font-style: oblique;
+}
+</style>
+
+<p class="italic" id="demo"></p>
 
 <script>
 var deadline = new Date();
@@ -17,43 +32,62 @@ var nov = new Date(2017,9,30);
 var dec = new Date(2017,10,28);
 if (cur <= dec) {
 var deadline = new Date(dec);
+var maand = "december";
 }
 if (cur <= nov) {
 var deadline = new Date(nov);
+var maand = "november";
 }
 if (cur <= okt) {
 var deadline = new Date(okt);
+var maand = "oktober";
 }
 if (cur <= sep) {
 var deadline = new Date(sep);
+var maand = "september";
 }
 if (cur <= aug) {
 var deadline = new Date(aug);
+var maand = "augustus";
 }
 if (cur <= jul) {
 var deadline = new Date(jul);
+var maand = "juli";
 }
 if (cur <= jun) {
 var deadline = new Date(jun);
+var maand = "juni";
 }
 if (cur <= mei) {
 var deadline = new Date(mei);
+var maand = "mei";
 }
 if (cur <= apr) {
 var deadline = new Date(apr);
+var maand = "april";
 }
 if (cur <= mrt) {
 var deadline = new Date(mrt);
+var maand = "maart";
 }
 if (cur <= feb) {
 var deadline = new Date(feb);
+var maand = "februari";
 }
 if (cur <= jan) {
 var deadline = new Date(jan);
+var maand = "januari";
 }
 var timeDiff = Math.abs(deadline.getTime() - cur.getTime());
 var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
 var deadline_txt = deadline.toLocaleDateString("nl-NL");
-var t = "Graag mutaties inleveren voor: " + deadline_txt + "." + "Nog " + diffDays + " dagen.";
+
+if (diffDays != 0) { 
+  var t = "Voor de uitbetaling van " + maand + ", graag mutaties inleveren voor: " + deadline_txt + ". " + "Nog " + diffDays + " dagen.";		
+} else {
+  var t = "Voor de uitbetaling van " + maand + ", graag vandaag de mutaties aanleveren.";	
+}
+
 document.getElementById("demo").innerHTML = t;
+
 </script>
