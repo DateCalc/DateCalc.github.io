@@ -88,9 +88,9 @@ var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
 var deadline_txt = deadline.toLocaleDateString("nl-NL");
 
 if (diffDays != 0) { 
-  var t = "Voor de uitbetaling van " + maand + ", graag mutaties inleveren voor: " + deadline_txt + ". " + "Nog " + diffDays + " dagen.";		
+  var t = "Voor de salarisbetaling van " + maand + ", graag mutaties inleveren voor: " + deadline_txt + ". " + "Nog " + diffDays + " dagen.";		
 } else {
-  var t = "Voor de uitbetaling van " + maand + ", graag vandaag de mutaties aanleveren.";	
+  var t = "Voor de salarisbetaling van " + maand + ", graag vandaag de mutaties aanleveren.";	
 }
 
 document.getElementById("demo").innerHTML = t;
